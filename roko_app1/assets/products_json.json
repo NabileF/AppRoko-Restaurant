@@ -1,0 +1,260 @@
+{
+  "fish_and_seafood": [
+    {
+      "image": "assets/products_pic/whole.jpg",
+      "name": "Bass,Striped,Whole",
+      "description": "BTa1BT",
+      "pricePerUnit": 3.75,
+      "unit": "Kg",
+      "deliveryType": "Bagor filet",
+      "price": 11.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/oysters.jpg",
+      "name": "Oysters,BLuePint60ct",
+      "description": "KTa1KT",
+      "pricePerUnit": 3.75,
+      "unit": "Kg",
+      "deliveryType": "Bagor filet",
+      "price": 44.95,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/manila.jpeg",
+      "name": "Clam,Manila,Clam,Littleneck",
+      "description": "Ela1El",
+      "pricePerUnit": 3.75,
+      "unit": "Kg",
+      "deliveryType": "Bagor filet",
+      "price": 11.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/shrimp.jpg",
+      "name": "Shrimp",
+      "description": "Sweet and succulent",
+      "pricePerUnit": 5.00,
+      "unit": "Kg",
+      "deliveryType": "Bag",
+      "price": 19.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/salmon.jpg",
+      "name": "Salmon",
+      "description": "Rich and buttery",
+      "pricePerUnit": 8.50,
+      "unit": "Kg",
+      "deliveryType": "Fillets",
+      "price": 29.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/crab.jpg",
+      "name": "Crab",
+      "description": "Delicate and sweet",
+      "pricePerUnit": 12.00,
+      "unit": "Each",
+      "deliveryType": "Live",
+      "price": 39.99,
+      "quantity": 0.0
+    },
+
+    {
+      "image": "assets/products_pic/squid.jpg",
+      "name": "Squid",
+      "description": "Tender and flavorful",
+      "pricePerUnit": 6.50,
+      "unit": "Kg",
+      "deliveryType": "Whole",
+      "price": 22.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/lobster.jpg",
+      "name": "Lobster",
+      "description": "Luxurious and succulent",
+      "pricePerUnit": 20.00,
+      "unit": "Each",
+      "deliveryType": "Live",
+      "price": 79.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/tuna.jpg",
+      "name": "Tuna",
+      "description": "Rich and meaty",
+      "pricePerUnit": 15.00,
+      "unit": "Kg",
+      "deliveryType": "Fillets",
+      "price": 49.99,
+      "quantity": 0.0
+    }
+  ],
+  "fruits": [
+
+      {
+        "image": "assets/products_pic/apple.jpg",
+        "name": "Apple",
+        "description": "Sweet and crunchy",
+        "pricePerUnit": 1.50,
+        "unit": "Kg",
+        "deliveryType": "Bulk",
+        "price": 3.99,
+        "quantity": 0.0
+      },
+      {
+        "image": "assets/products_pic/orange.jpg",
+        "name": "Orange",
+        "description": "Juicy and refreshing",
+        "pricePerUnit": 2.00,
+        "unit": "Kg",
+        "deliveryType": "Box",
+        "price": 5.99,
+        "quantity": 0.0
+      },
+      {
+        "image": "assets/products_pic/banana.jpg",
+        "name": "Banana",
+        "description": "Rich in potassium",
+        "pricePerUnit": 1.20,
+        "unit": "Dozen",
+        "deliveryType": "Bunch",
+        "price": 2.99,
+        "quantity": 0.0
+      },
+      {
+        "image": "assets/products_pic/strawberry.jpg",
+        "name": "Strawberry",
+        "description": "Sweet and tangy",
+        "pricePerUnit": 3.00,
+        "unit": "Punnet",
+        "deliveryType": "Box",
+        "price": 7.99,
+        "quantity": 0.0
+      },
+      {
+      "image": "assets/products_pic/grape.jpg",
+      "name": "Grape",
+      "description": "Juicy and flavorful",
+      "pricePerUnit": 2.50,
+      "unit": "Kg",
+      "deliveryType": "Bag",
+      "price": 6.99,
+      "quantity": 0.0
+    },
+
+    {
+      "image": "assets/products_pic/mango.jpg",
+      "name": "Mango",
+      "description": "Sweet and tropical",
+      "pricePerUnit": 2.50,
+      "unit": "Each",
+      "deliveryType": "Box",
+      "price": 4.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/pineapple.jpg",
+      "name": "Pineapple",
+      "description": "Tropical and tangy",
+      "pricePerUnit": 2.99,
+      "unit": "Each",
+      "deliveryType": "Single",
+      "price": 3.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/watermelon.jpg",
+      "name": "Watermelon",
+      "description": "Sweet and hydrating",
+      "pricePerUnit": 0.99,
+      "unit": "Kg",
+      "deliveryType": "Bulk",
+      "price": 5.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/kiwi.jpg",
+      "name": "Kiwi",
+      "description": "Tangy and nutritious",
+      "pricePerUnit": 0.75,
+      "unit": "Each",
+      "deliveryType": "Box",
+      "price": 3.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/pear.jpg",
+      "name": "Pear",
+      "description": "Sweet and grainy",
+      "pricePerUnit": 1.50,
+      "unit": "Kg",
+      "deliveryType": "Bulk",
+      "price": 4.99,
+      "quantity": 0.0
+    },
+
+    {
+      "image": "assets/products_pic/apricot.jpg",
+      "name": "Apricot",
+      "description": "Velvety and sweet",
+      "pricePerUnit": 2.25,
+      "unit": "Kg",
+      "deliveryType": "Box",
+      "price": 6.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/plum.jpg",
+      "name": "Plum",
+      "description": "Juicy and tart",
+      "pricePerUnit": 1.75,
+      "unit": "Kg",
+      "deliveryType": "Box",
+      "price": 5.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/cherry.jpg",
+      "name": "Cherry",
+      "description": "Sweet and succulent",
+      "pricePerUnit": 4.00,
+      "unit": "Punnet",
+      "deliveryType": "Box",
+      "price": 8.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/raspberries.jpg",
+      "name": "Raspberry",
+      "description": "Tart and delicate",
+      "pricePerUnit": 3.50,
+      "unit": "Punnet",
+      "deliveryType": "Box",
+      "price": 9.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/blueberry.jpg",
+      "name": "Blueberry",
+      "description": "Sweet and antioxidant-rich",
+      "pricePerUnit": 5.00,
+      "unit": "Punnet",
+      "deliveryType": "Box",
+      "price": 12.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/blackberry.jpg",
+      "name": "Blackberry",
+      "description": "Juicy and earthy",
+      "pricePerUnit": 3.25,
+      "unit": "Punnet",
+      "deliveryType": "Box",
+      "price": 10.99,
+      "quantity": 0.0
+    }
+  ]
+}

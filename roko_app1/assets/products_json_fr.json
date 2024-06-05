@@ -1,0 +1,256 @@
+{
+  "fish_and_seafood": [
+    {
+      "image": "assets/products_pic/whole.jpg",
+      "name": "Bar, rayé, entier",
+      "description": "BTa1BT",
+      "pricePerUnit": 3.75,
+      "unit": "Kg",
+      "deliveryType": "Sac ou filet",
+      "price": 11.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/oysters.jpg",
+      "name": "Huîtres, BLuePint60ct",
+      "description": "KTa1KT",
+      "pricePerUnit": 3.75,
+      "unit": "Kg",
+      "deliveryType": "Sac ou filet",
+      "price": 44.95,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/manila.jpeg",
+      "name": "Palourde, Manila, Palourde, Littleneck",
+      "description": "Ela1El",
+      "pricePerUnit": 3.75,
+      "unit": "Kg",
+      "deliveryType": "Sac ou filet",
+      "price": 11.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/shrimp.jpg",
+      "name": "Crevettes",
+      "description": "Doux et succulent",
+      "pricePerUnit": 5.00,
+      "unit": "Kg",
+      "deliveryType": "Sac",
+      "price": 19.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/salmon.jpg",
+      "name": "Saumon",
+      "description": "Riche et beurré",
+      "pricePerUnit": 8.50,
+      "unit": "Kg",
+      "deliveryType": "Filets",
+      "price": 29.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/crab.jpg",
+      "name": "Crabe",
+      "description": "Délicat et sucré",
+      "pricePerUnit": 12.00,
+      "unit": "Chacun",
+      "deliveryType": "Vivant",
+      "price": 39.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/squid.jpg",
+      "name": "Calmar",
+      "description": "Tendre et savoureux",
+      "pricePerUnit": 6.50,
+      "unit": "Kg",
+      "deliveryType": "Entier",
+      "price": 22.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/lobster.jpg",
+      "name": "Homard",
+      "description": "Luxueux et succulent",
+      "pricePerUnit": 20.00,
+      "unit": "Chacun",
+      "deliveryType": "Vivant",
+      "price": 79.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/tuna.jpg",
+      "name": "Thon",
+      "description": "Riche et charnu",
+      "pricePerUnit": 15.00,
+      "unit": "Kg",
+      "deliveryType": "Filets",
+      "price": 49.99,
+      "quantity": 0.0
+    }
+  ],
+  "fruits": [
+    {
+      "image": "assets/products_pic/apple.jpg",
+      "name": "Pomme",
+      "description": "Sucrée et croquante",
+      "pricePerUnit": 1.50,
+      "unit": "Kg",
+      "deliveryType": "En vrac",
+      "price": 3.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/orange.jpg",
+      "name": "Orange",
+      "description": "Juteuse et rafraîchissante",
+      "pricePerUnit": 2.00,
+      "unit": "Kg",
+      "deliveryType": "Boîte",
+      "price": 5.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/banana.jpg",
+      "name": "Banane",
+      "description": "Riche en potassium",
+      "pricePerUnit": 1.20,
+      "unit": "Douzaine",
+      "deliveryType": "Botte",
+      "price": 2.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/strawberry.jpg",
+      "name": "Fraise",
+      "description": "Sucrée et acidulée",
+      "pricePerUnit": 3.00,
+      "unit": "Barquette",
+      "deliveryType": "Boîte",
+      "price": 7.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/grape.jpg",
+      "name": "Raisin",
+      "description": "Juteux et savoureux",
+      "pricePerUnit": 2.50,
+      "unit": "Kg",
+      "deliveryType": "Sac",
+      "price": 6.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/mango.jpg",
+      "name": "Mangue",
+      "description": "Sucrée et tropicale",
+      "pricePerUnit": 2.50,
+      "unit": "Chacune",
+      "deliveryType": "Boîte",
+      "price": 4.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/pineapple.jpg",
+      "name": "Ananas",
+      "description": "Tropical et acidulé",
+      "pricePerUnit": 2.99,
+      "unit": "Chacun",
+      "deliveryType": "Unique",
+      "price": 3.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/watermelon.jpg",
+      "name": "Pastèque",
+      "description": "Sucrée et hydratante",
+      "pricePerUnit": 0.99,
+      "unit": "Kg",
+      "deliveryType": "En vrac",
+      "price": 5.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/kiwi.jpg",
+      "name": "Kiwi",
+      "description": "Acidulé et nutritif",
+      "pricePerUnit": 0.75,
+      "unit": "Chacun",
+      "deliveryType": "Boîte",
+      "price": 3.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/pear.jpg",
+      "name": "Poire",
+      "description": "Sucrée et granuleuse",
+      "pricePerUnit": 1.50,
+      "unit": "Kg",
+      "deliveryType": "En vrac",
+      "price": 4.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/apricot.jpg",
+      "name": "Abricot",
+      "description": "Velouté et sucré",
+      "pricePerUnit": 2.25,
+      "unit": "Kg",
+      "deliveryType": "Boîte",
+      "price": 6.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/plum.jpg",
+      "name": "Prune",
+      "description": "Juteuse et acidulée",
+      "pricePerUnit": 1.75,
+      "unit": "Kg",
+      "deliveryType": "Boîte",
+      "price": 5.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/cherry.jpg",
+      "name": "Cerise",
+      "description": "Sucrée et succulente",
+      "pricePerUnit": 4.00,
+      "unit": "Barquette",
+      "deliveryType": "Boîte",
+      "price": 8.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/raspberries.jpg",
+      "name": "Framboise",
+      "description": "Acidulée et délicate",
+      "pricePerUnit": 3.50,
+      "unit": "Barquette",
+      "deliveryType": "Boîte",
+      "price": 9.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/blueberry.jpg",
+      "name": "Myrtille",
+      "description": "Sucrée et riche en antioxydants",
+      "pricePerUnit": 5.00,
+      "unit": "Barquette",
+      "deliveryType": "Boîte",
+      "price": 12.99,
+      "quantity": 0.0
+    },
+    {
+      "image": "assets/products_pic/blackberry.jpg",
+      "name": "Mûre",
+      "description": "Juteuse et terreuse",
+      "pricePerUnit": 3.25,
+      "unit": "Barquette",
+      "deliveryType": "Boîte",
+      "price": 10.99,
+      "quantity": 0.0
+    }
+  ]
+}
