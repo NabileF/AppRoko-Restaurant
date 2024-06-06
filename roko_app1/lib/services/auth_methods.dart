@@ -12,8 +12,8 @@ class AuthMethods {
   signIn({required String phoneNumber, required BuildContext context}) async {
     await _auth.verifyPhoneNumber(
       phoneNumber: phoneNumber,
-      timeout: const Duration(seconds: 60),
-      verificationCompleted: (AuthCredential credential) async {
+      timeout: const Duration(seconds: 120),
+      verificationCompleted: (PhoneAuthCredential credential) async {
         try {
           //UserCredential userCredential =
           await _auth.signInWithCredential(credential);

@@ -47,29 +47,28 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAq8edV46ThXs521RFFGOyoYMxkC_87QB8',
-    appId: '1:732801100368:web:5c94b8fff5092b9d2bbf55',
-    messagingSenderId: '732801100368',
-    projectId: 'roko-app-e422d',
-    authDomain: 'roko-app-e422d.firebaseapp.com',
-    storageBucket: 'roko-app-e422d.appspot.com',
-    measurementId: 'G-J4GPY73D4V',
+    apiKey: 'AIzaSyCGkUslnqDSe0hiFj5wIlta5g94YQ-Bnpc',
+    appId: '1:811481775179:web:22436527ead64b4529a1ce',
+    messagingSenderId: '811481775179',
+    projectId: 'rokoapp-8222e',
+    authDomain: 'rokoapp-8222e.firebaseapp.com',
+    storageBucket: 'rokoapp-8222e.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBDLB1wSLVtEbPJeYpkpoChPeWI_ohT4lE',
-    appId: '1:732801100368:android:1869e1b6e94c3d922bbf55',
-    messagingSenderId: '732801100368',
-    projectId: 'roko-app-e422d',
-    storageBucket: 'roko-app-e422d.appspot.com',
+    apiKey: 'AIzaSyAN3lnk87zAcH_DMVIxWJDdtNFxdV0Jt48',
+    appId: '1:811481775179:android:5a0bc5f3213a218e29a1ce',
+    messagingSenderId: '811481775179',
+    projectId: 'rokoapp-8222e',
+    storageBucket: 'rokoapp-8222e.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBlJSd2TLLUkcilCUq25ChHOpkpSSqre3I',
-    appId: '1:732801100368:ios:8ecb40fac2e325e92bbf55',
-    messagingSenderId: '732801100368',
-    projectId: 'roko-app-e422d',
-    storageBucket: 'roko-app-e422d.appspot.com',
+    apiKey: 'AIzaSyDfhFxRfoUfl4R1coPB8VdDbnh5IC9HDwc',
+    appId: '1:811481775179:ios:014c10a1ccf47eed29a1ce',
+    messagingSenderId: '811481775179',
+    projectId: 'rokoapp-8222e',
+    storageBucket: 'rokoapp-8222e.appspot.com',
     iosBundleId: 'com.example.rokoApp1',
   );
 

@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "732801100368",
-    "project_id": "roko-app-e422d",
-    "storage_bucket": "roko-app-e422d.appspot.com"
+    "project_number": "811481775179",
+    "project_id": "rokoapp-8222e",
+    "storage_bucket": "rokoapp-8222e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:732801100368:android:1869e1b6e94c3d922bbf55",
+        "mobilesdk_app_id": "1:811481775179:android:5a0bc5f3213a218e29a1ce",
         "android_client_info": {
-          "package_name": "com.roko.app"
+          "package_name": "com.example.rokoapp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBDLB1wSLVtEbPJeYpkpoChPeWI_ohT4lE"
+          "current_key": "AIzaSyAN3lnk87zAcH_DMVIxWJDdtNFxdV0Jt48"
         }
       ],
       "services": {
