@@ -21,6 +21,7 @@ class SupplierModel {
   List<RatingModel> rating;
   DateTime createdAt;
   DateTime updatedAt;
+
   SupplierModel({
     required this.supplierId,
     required this.supplierName,
