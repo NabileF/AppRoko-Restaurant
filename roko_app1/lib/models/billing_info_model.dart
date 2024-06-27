@@ -12,7 +12,7 @@ class BillingInfoModel {
   });
 
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'cardNumber': cardNumber,
       'expiryDate': expiryDate!.millisecondsSinceEpoch,

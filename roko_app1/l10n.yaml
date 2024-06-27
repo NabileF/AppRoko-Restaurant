@@ -1,0 +1,3 @@
+arb-dir: lib\app_manager
+template-arb-file: en.arb
+output-localisation-file: app_localizations.dart

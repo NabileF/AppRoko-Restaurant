@@ -14,10 +14,10 @@ class SubscriptionModel {
     this.subscriptionDate
   });
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'planId': planId,
-      'billingInfo': billingInfo!.toMap(),
+      'billingInfo': billingInfo!.toJson(),
       'status': status,
       'subscriptionDate': subscriptionDate!.millisecondsSinceEpoch,
     };
