@@ -31,16 +31,53 @@ class _OTPScreenState extends State<OTPScreen> {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations appLocalizations = AppLocalizations.of(context)!;
+    GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
     return BlocProvider(
       create: (context) => SignupBloc(),
       child: Scaffold(
+        key: _key,
         backgroundColor: Colors.white,
         body: BlocListener<SignupBloc, SignupState>(
           listener: (context, state) {
             if (state is SignupVerified) {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => FinalStepScreen(),
-              ));
+              _key.currentState!.showBottomSheet((context) => Container(
+                    height: 150,
+                    child: Padding(
+                      padding: EdgeInsets.all(15),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Create New Business or Join Existing Team',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(
+                                      builder: (context) => FinalStepScreen(),
+                                    ));
+                                  },
+                                  child: Text('Create New Business')),
+                              ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(
+                                      builder: (context) => FinalStepScreen(),
+                                    ));
+                                  },
+                                  child: Text('Join Existing Team'))
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ));
             } else if (state is SignupError) {
               // Show error message
               AppFunctions.showAlert(

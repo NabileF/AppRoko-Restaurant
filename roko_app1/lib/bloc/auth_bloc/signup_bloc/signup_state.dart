@@ -24,3 +24,5 @@ final class SignupError extends SignupState {
   String? error;
   SignupError(this.error);
 }
+
+final class SignupUserExist extends SignupState {}

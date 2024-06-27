@@ -12,23 +12,29 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
       // First emit the SignupLoading state
       emit(SignupLoading());
       try {
+        bool userExists =
+            await AuthMethods().checkIfPhoneNumberExists(event.phoneNumber);
         // Calling the verifyPhoneNumber function to verify the user's phone number
-        final result = await AuthMethods()
-            .verifyPhoneNumber(phoneNumber: event.phoneNumber);
-        // Stores the state and verificationId values into variables
-        final state1 = result['state']!;
-        final verificationId = result['verificationId']!;
-        // if state is 'Send OTP' emit the SignupOTPSend state with the verificationId.
-        if (state1 == 'Send OTP') {
-          emit(SignupOTPSend(verificationId));
-        }
-        // if state is 'Verified' emit the SignupVerified state.
-        else if (state1 == 'Verified') {
-          emit(SignupVerified());
-        }
-        // else emit the SignupError state with the error message.
-        else {
-          emit(SignupError('Unknown state: $state1'));
+        if (userExists) {
+          emit(SignupUserExist());
+        } else {
+          final result = await AuthMethods()
+              .verifyPhoneNumber(phoneNumber: event.phoneNumber);
+          // Stores the state and verificationId values into variables
+          final state1 = result['state']!;
+          final verificationId = result['verificationId']!;
+          // if state is 'Send OTP' emit the SignupOTPSend state with the verificationId.
+          if (state1 == 'Send OTP') {
+            emit(SignupOTPSend(verificationId));
+          }
+          // if state is 'Verified' emit the SignupVerified state.
+          else if (state1 == 'Verified') {
+            emit(SignupVerified());
+          }
+          // else emit the SignupError state with the error message.
+          else {
+            emit(SignupError('Unknown state: $state1'));
+          }
         }
       } catch (e) {
         emit(SignupError(e.toString()));

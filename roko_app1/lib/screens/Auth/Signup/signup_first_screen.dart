@@ -3,9 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:roko_app1/bloc/auth_bloc/signup_bloc/signup_bloc.dart';
+import 'package:roko_app1/screens/Auth/SignIn/login_screen.dart';
 import 'package:roko_app1/screens/Auth/Signup/otp_screen.dart';
 import 'package:roko_app1/screens/Auth/Signup/restaurant_info.dart';
+import 'package:roko_app1/screens/Auth/intro_screen.dart';
+import 'package:roko_app1/shared_widgets/components/useable_functions.dart';
 
 class SignupFirstScreen extends StatefulWidget {
   const SignupFirstScreen({super.key});
@@ -41,6 +45,26 @@ class _SignupFirstScreenState extends State<SignupFirstScreen> {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => FinalStepScreen(),
               ));
+            } else if (state is SignupUserExist) {
+              AppFunctions.showAlert(
+                  context: context,
+                  alertType: AlertType.error,
+                  message: "Would you like to log in?",
+                  title: 'There is aleardy a User with this Phone Number',
+                  dialogButtons: [
+                    DialogButton(
+                        child: const Text("Login"),
+                        onPressed: () {
+                          AppFunctions.navigateToAndRemove(
+                              context, const LoginScreen());
+                        }),
+                    DialogButton(
+                        onPressed: () {
+                          AppFunctions.navigateToAndRemove(
+                              context, const IntroScreen());
+                        },
+                        child: Text('Cancel')) //
+                  ]);
             } else if (state is SignupError) {
               // Show error message
               ScaffoldMessenger.of(context).showSnackBar(
