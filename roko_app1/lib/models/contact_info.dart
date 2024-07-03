@@ -1,8 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+
 class ContactInfo {
   int? phoneNumber;
   String? email;
   String? address;
+
   ContactInfo({
     this.phoneNumber,
     this.email,
@@ -10,7 +12,7 @@ class ContactInfo {
   });
 
   Map<String, dynamic> toMap() {
-    return <String, dynamic>{
+    return {
       'phoneNumber': phoneNumber,
       'email': email,
       'address': address,
@@ -19,9 +21,9 @@ class ContactInfo {
 
   factory ContactInfo.fromMap(Map<String, dynamic> map) {
     return ContactInfo(
-      phoneNumber: map['phoneNumber'] as int,
-      email: map['email'] as String,
-      address: map['address'] as String,
+      phoneNumber: map['phoneNumber'] as int?,
+      email: map['email'] as String?,
+      address: map['address'] as String?,
     );
   }
 }

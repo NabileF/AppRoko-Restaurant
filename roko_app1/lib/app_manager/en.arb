@@ -1,0 +1,744 @@
+{
+  "@@locale": "en",
+
+  "login": "Login",
+  "@login": {
+    "description": "Login"
+  },
+  "signUp": "Sign Up",
+  "@signUp": {
+    "description": "Signup"
+  },
+  "intro": "ORDERING,\nBUT BETTER",
+  "@intro": {
+    "description": "Intro message"
+  },
+  "appDescription": "Orders are converted into your \n supplier's format of choice -email,WhatsApp,text,",
+  "@appDescription" : {
+    "description": "Orders are converted into your \n supplier's format of choice -email,WhatsApp,text,"
+  },
+
+  "terms":"By continuing and using the app,you're agreeing to our terms & conditions",
+  "@terms": {
+    "description":"By continuing and using the app,you're agreeing to our terms & conditions"
+  },
+
+  "phoneVerification": "Please Enter your Phone number to Login,Verification code will be sent to you",
+  "@phoneVerification": {
+    "description": "Please Enter your Phone number to Login,Verification code will be sent to you"
+  },
+  "codeCountry": "Country Code",
+  "@codeCountry": {
+    "description": "Country Code"
+  },
+  "inputError": "You should enter your cell phone number to continue",
+  "@inputError": {
+    "description": "phone number not valid or null"
+  },
+  "phoneNumberLabel": "Phone Number",
+  "@phoneNumberLabel": {
+    "description": "phone number Label"
+  },
+  "sendVerificationCode": "Send Verification Code",
+  "@sendVerificationCode": {
+    "description": "send Verification Code"
+  },
+  "verifyPhoneNumber": "Verify Your phone Number",
+  "@verifyPhoneNumber": {
+    "description": "Verification Phone Number"
+  },
+
+  "verificationCodeAlert": "Please enter the verification code sent to {phoneNumber}",
+  "@verificationCodeAlert": {
+    "description": "verification code sent to PhoneNumber",
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String"
+      }
+    }
+  },
+
+  "settings": "SETTINGS",
+  "@settings": {
+    "description": "settings"
+  },
+  "settingsLanguage": "Language",
+  "@settingsLanguage": {
+    "description": "Language"
+  },
+  "settingsTermsConditions": "Terms & conditions",
+  "@settingsTermsConditions": {
+    "description": "terms"
+  },
+  "settingsLogout": "Logout",
+  "@settingsLogout": {
+    "description": "Logout"
+  },
+  "logoutWarning":"Warning",
+  "@logoutWarning": {
+    "description": "Warning"
+  },
+  "logoutMessage":"Are sure you want to Logout?",
+  "@logoutMessage": {
+    "description": "message logging Out"
+  },
+
+  "codeReceiveFailed": "Didn't receive the code?",
+  "@codeReceiveFailed": {
+    "description": "code send failed"
+  },
+  "supportContact": "Contact customer support",
+  "@supportContact": {
+    "description": "support Contact"
+  },
+  "syncContact": "Sync Contacts",
+  "@syncContact": {
+    "description": "sync Contact"
+  },
+
+  "syncContactPermission": "To sync your contacts, you may need to allow the app to access your contacts.",
+  "@syncContactPermission": {
+    "description": "Sync Permission"
+  },
+
+  "permissionAsking": "Do you want to allow access to your contacts?",
+  "@permissionAsking": {
+    "description": "Asking for Permission"
+  },
+
+  "negativeChoice": "Not Now",
+  "@negativeChoice": {
+    "description": "Negative"
+  },
+
+  "affirmativeChoice": "Allow",
+  "@affirmativeChoice": {
+    "description": "Affirmative"
+  },
+  "supplier": "Supplier",
+  "@supplier": {
+    "description": "supplier"
+  },
+  "order": "Orders",
+  "@order": {
+    "description": "Orders"
+  },
+  "team": "Teams",
+  "@team": {
+    "description": "Teams"
+  },
+  "categoryType": "{category}",
+  "@categoryType": {
+    "description": "category",
+      "placeholders": {
+        "category": {
+          "type": "String"
+        }
+    }
+  },
+
+
+  "general": "General",
+  "@general": {
+    "description": "General"
+  },
+  "fruits": "Fruits",
+  "@fruits": {
+    "description": "Fruits"
+  },
+  "fish": "Fish",
+  "@fish": {
+    "description": "Fish"
+  },
+  "drinks": "Drinks",
+  "@drinks": {
+    "description": "Drinks"
+  },
+  "search": "Search",
+  "@search": {
+    "description": "Search"
+  },
+  "addSupplierKey": "ADD SUPPLIER",
+  "@addSupplierKey": {
+    "description": "Add Supplier"
+  },
+  "deleteSupplierConfirmationKey": "Are sure you want to delete this Supplier?",
+  "@deleteSupplierConfirmationKey": {
+    "description": "Delete Supplier Confirmation"
+  },
+  "cancelKey": "Cancel",
+  "@cancelKey": {
+    "description": "Cancel"
+  },
+  "supplierAdd": "Add your supplier",
+  "@supplierAdd": {
+    "description": "Add your supplier"
+  },
+  "notFound": "Not Found",
+  "@notFound": {
+    "description": "supplier not found"
+  },
+  "searchHint": "Try searching for a different supplier or manually add the one you were looking for",
+  "@searchHint": {
+    "description": "supplier search hint"
+  },
+
+  "searchHelp": "Search For Your Suppliers",
+  "@searchHelp": {
+    "description": "supplier search"
+  },
+
+  "searchHelp1":  "Search for your Suppliers by typing their names in the searchfield. Add Theme to start ordering",
+  "@searchHelp1": {
+    "description": "supplier search 1"
+  },
+
+  "startOrder":  "Start Order",
+  "@startOrder": {
+    "description": "Start order btn"
+  },
+  "browseCatalogKey": "BROWSE CATALOG",
+  "@browseCatalogKey": {
+    "description": "Browse Catalog"
+  },
+  "addProductManuallyKey": "ADD PRODUCT MANUALLY",
+  "@addProductManuallyKey": {
+    "description": "Add Product Manually"
+  },
+  "uploadInvoiceKey": "UPLOAD INVOICE",
+  "@uploadInvoiceKey": {
+    "description": "Upload Invoice"
+  },
+  "saveChangesKey": "SAVE CHANGES",
+  "@saveChangesKey": {
+    "description": "Save Changes"
+  },
+  "bakedGoodsKey": "BakedGoods",
+  "@bakedGoodsKey": {
+    "description": "Baked Goods"
+  },
+  "produceKey": "Produce",
+  "@produceKey": {
+    "description": "Produce"
+  },
+  "dairyAndEggsKey": "Dairy&Eggs",
+  "@dairyAndEggsKey": {
+    "description": "Dairy & Eggs"
+  },
+  "meatAndPoultryKey": "Meat&Poultry",
+  "@meatAndPoultryKey": {
+    "description": "Meat & Poultry"
+  },
+
+  "seafoodKey": "Seafood",
+  "@seafoodKey": {
+    "description": "Seafood"
+  },
+  "plantbased1Key": "Plantbased",
+  "@plantbased1Key": {
+    "description": "Plant-based"
+  },
+  "drvGoodsAndGroceryKey": "DrvGoods&Grocery",
+  "@drvGoodsAndGroceryKey": {
+    "description": "Drv Goods & Grocery"
+  },
+  "plantbased2Key": "Plantbased",
+  "@plantbased2Key": {
+    "description": "Plant-based"
+  },
+
+  "noSupplierFoundOnThisCategoryKey": "No Supplier Found on This Category",
+  "@noSupplierFoundOnThisCategoryKey": {
+    "description": "No Supplier Found on This Category"
+  },
+  "moKey": "Mo",
+  "@moKey": {
+    "description": "Monday"
+  },
+  "tueKey": "Tue",
+  "@tueKey": {
+    "description": "Tuesday"
+  },
+  "wedKey": "Wed",
+  "@wedKey": {
+    "description": "Wednesday"
+  },
+  "thurKey": "Thur",
+  "@thurKey": {
+    "description": "Thursday"
+  },
+  "friKey": "Fri",
+  "@friKey": {
+    "description": "Friday"
+  },
+
+  "showMoreKey": "Show more",
+  "@showMoreKey": {
+    "description": "Show More"
+  },
+  "detailsKey": "Details",
+  "@detailsKey": {
+    "description": "Show details"
+  },
+  "aboutKey": "About",
+  "@aboutKey": {
+    "description": "About"
+  },
+  "addKey": "ADD",
+  "@addKey": {
+    "description": "ADD"
+  },
+  "deliveryDaysKey": "Delivery Days",
+  "@deliveryDaysKey": {
+    "description": "Delivery Days"
+  },
+  "cutOffTimesKey": "Cut-off Times",
+  "@cutOffTimesKey": {
+    "description": "Cut-off Times"
+  },
+  "minimumOrderValueKey": "Minimum Order Value",
+  "@minimumOrderValueKey": {
+    "description": "Minimum Order Value"
+  },
+  "deliveryFeeKey": "Delivery fee",
+  "@deliveryFeeKey": {
+    "description": "Delivery Fee"
+  },
+  "onlyExistingCustomersKey": "Only Acception Existing Customers",
+  "@onlyExistingCustomersKey": {
+    "description": "Only Accepting Existing Customers"
+  },
+  "existingCustomerKey": "I am an Existing Customer",
+  "@existingCustomerKey": {
+    "description": "Existing Customer"
+  },
+  "notExistingCustomerKey": "Not an Existing Customer",
+  "@notExistingCustomerKey": {
+    "description": "Not an Existing Customer"
+  },
+  "addProductKey": "ADD PRODUCT",
+  "@addProductKey": {
+    "description": "Add Product"
+  },
+  "productNameLabel": "Product Name *",
+  "@productNameLabel": {
+    "description": "Product Name *"
+  },
+  "exampleAvocado": "e.g. Avocado",
+  "@exampleAvocado": {
+    "description": "Example: Avocado"
+  },
+  "unitLabel": "Unit *",
+  "@unitLabel": {
+    "description": "Unit *"
+  },
+  "productIDLabel": "Product ID",
+  "@productIDLabel": {
+    "description": "Product ID"
+  },
+  "myPriceLabel": "My Price",
+  "@myPriceLabel": {
+    "description": "My Price"
+  },
+  "priceExplanation": "Only visible to you and should reflect the price you pay your supplier",
+  "@priceExplanation": {
+    "description": "Explanation for price"
+  },
+  "currency": "DH",
+  "@currency": {
+    "description": "Currency"
+  },
+  "eachLabel": "Each",
+  "@eachLabel": {
+    "description": "Each"
+  },
+  "unitLabelWithArgs": "{value}",
+  "@unitLabelWithArgs": {
+    "description": "unit",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "caseLabel": "Case",
+  "@caseLabel": {
+    "description": "Case"
+  },
+  "caseLabelWithArgs": "{value}Case",
+  "@caseLabelWithArgs": {
+    "description": "Case"
+  },
+  "bottleLabel": "Bottle",
+  "@bottleLabel": {
+    "description": "Bottle"
+  },
+  "boxLabel": "Box",
+  "@boxLabel": {
+    "description": "Box"
+  },
+  "kgLabel": "Kg",
+  "@kgLabel": {
+    "description": "Kg"
+  },
+  "packLabel": "Pack",
+  "@packLabel": {
+    "description": "Pack"
+  },
+  "bunchLabel": "Bunch",
+  "@bunchLabel": {
+    "description": "Bunch"
+  },
+  "otherLabel": "Other",
+  "@otherLabel": {
+    "description": "Other"
+  },
+
+
+  "addInvoiceSheet" : "Add Invoice or stock-takesheet",
+  "@addInvoiceSheet": {
+    "description": "invoice Sheet"
+  },
+  "backLabel" : "Back",
+  "@backLabel": {
+    "description": "Back"
+  },
+  "sendLabel" : "SEND",
+  "@sendLabel": {
+    "description": "SEND"
+  },
+  "selectFrom" : "Select From",
+  "@selectFrom": {
+    "description": "Select From"
+  },
+  "camera" : "Camera",
+  "@camera": {
+    "description": "Camera"
+  },
+  "gallery" : "Photo Gallery",
+  "@gallery": {
+    "description": "Photo Gallery"
+  },
+  "catalogDetailsKey": "Catalog Details",
+  "@catalogDetailsKey": {
+    "description": "Catalog Details"
+  },
+  "orderGuideKey": "Order Guide",
+  "@orderGuideKey": {
+    "description": "Order Guide"
+  },
+
+
+
+  "minimumOrderValueExplanation": "This supplier has a minimum order value. Additional costs may occur if orders are placed under this amount.",
+  "@minimumOrderValueExplanation": {
+    "description": "Explanation for Minimum Order Value"
+  },
+  "requestDeliveryDateKey": "Request delivery date",
+  "@requestDeliveryDateKey": {
+    "description": "Request delivery date"
+  },
+  "orderSummaryKey": "Order Summary",
+  "@orderSummaryKey": {
+    "description": "Order Summary"
+  },
+  "finalizeOrderDetailsKey": "FINALIZE ORDER DETAILS",
+  "@finalizeOrderDetailsKey": {
+    "description": "Finalize Order Details"
+  },
+  "deliveryDateRequirement": "This supplier requires a delivery date for all orders",
+  "@deliveryDateRequirement": {
+    "description": "Delivery Date Requirement"
+  },
+  "leaveCommentKey": "Leave a comment",
+  "@leaveCommentKey": {
+    "description": "Leave a comment"
+  },
+  "exampleComment": "e.g. Please call upon arrival",
+  "@exampleComment": {
+    "description": "Example Comment"
+  },
+  "examplePrice": "e.g.20.00",
+  "@examplePrice": {
+    "description": "Example Price"
+  },
+  "saveForYourTeamKey": "SAVE FOR YOUR TEAM",
+  "@saveForYourTeamKey": {
+    "description": "Save For Your Team"
+  },
+  "productsKey": "Products",
+  "@productsKey": {
+    "description": "Products"
+  },
+  "editKey": "Edit",
+  "@editKey": {
+    "description": "Edit"
+  },
+
+  "orderConfirmationKeyWithArgs": "YOUR ORDER TO {supplier_name} HAS BEEN SENT",
+  "@orderConfirmationKeyWithArgs": {
+    "description": "Order Confirmation",
+    "placeholders" : {
+      "supplier_name": {
+        "type": "String"
+      }
+    }
+  },
+  "orderKey": "Order",
+  "@orderKey": {
+    "description": "Order"
+  },
+  "requestSentKey": "Request Sent",
+  "@requestSentKey": {
+    "description": "Request Sent"
+  },
+  "productsFoundKey": "Products Found",
+  "@productsFoundKey": {
+    "description": "Products Found"
+  },
+  "deleteKey": "Delete",
+  "@deleteKey": {
+    "description": "Delete"
+  },
+  "adminKey": "Admin",
+  "@adminKey": {
+    "description": "Admin"
+  },
+  "youKey": "You",
+  "@youKey": {
+    "description": "You"
+  },
+  "contactsKey": "Contacts",
+  "@contactsKey": {
+    "description": "Contacts"
+  },
+  "searchContactKey": "Search for contact",
+  "@searchContactKey": {
+    "description": "Search for contact"
+  },
+  "memberKey": "Member",
+  "@memberKey": {
+    "description": "Member"
+  },
+  "noPhoneNumberKey": "No phone number",
+  "@noPhoneNumberKey": {
+    "description": "No phone number"
+  },
+  "noContactsFoundKey": "No Contacts Found",
+  "@noContactsFoundKey": {
+    "description": "No Contacts Found"
+  },
+  "accessContactsMessage": "Roko App Needs access to your contacts to Add new member",
+  "@accessContactsMessage": {
+    "description": "Access Contacts Message"
+  },
+  "addTeamMemberKey": "ADD TEAM MEMBER",
+  "@addTeamMemberKey": {
+    "description": "Add Team Member"
+  },
+  "confirmDeleteMemberMessage": "Are you sure you want do delete this Member?",
+  "@confirmDeleteMemberMessage": {
+    "description": "Confirm Delete Member Message"
+  },
+  "memberDeletedMessage": "Member Deleted",
+  "@memberDeletedMessage": {
+    "description": "Member Deleted Message"
+  },
+  "teamManagementKey": "Team Management",
+  "@teamManagementKey": {
+    "description": "Team Management"
+  },
+  "assignRolesDescription": "Assign roles to manage what team members can do on Choco. Only Admins have access to Roles & Permissions.",
+  "@assignRolesDescription": {
+    "description": "Assign Roles Description"
+  },
+  "rolesPermissionsKey": "Roles & Permissions",
+  "@rolesPermissionsKey": {
+    "description": "Roles & Permissions"
+  },
+  "teamMembersKey": "Team members",
+  "@teamMembersKey": {
+    "description": "Team members"
+  },
+  "otpVerification": "Verification",
+  "@otpVerification": {
+    "description": "Verification"
+  },
+  "otpVerificationSent": "Enter the verification code that we sent to your mobile phone",
+  "@otpVerificationSent": {
+    "description": "Verification Code"
+  },
+  "otpVerificationVerify": "VERIFY",
+  "@otpVerificationVerify": {
+    "description": "VERIFY"
+  },
+  "otpVerificationResend": "Resend new code",
+  "@otpVerificationResend": {
+    "description": "Resend new code"
+  },
+
+
+  "registration": "Registration",
+  "@registration": {
+    "description": "Register"
+  },
+  "registrationGuide": "Add your phone number.We'll send you a verification code",
+  "@registrationGuide": {
+    "description": "Register Guide"
+  },
+  "registrationHintText": "Enter phone number",
+  "@registrationHintText": {
+    "description": "Register hint text"
+  },
+  "registrationPhoneNumberEmpty": "Please enter your phone Number",
+  "@registrationPhoneNumberEmpty": {
+    "description": "Register phone number Error"
+  },
+  "registrationPhoneNumberInvalid": "Please enter valid phone Number",
+  "@registrationPhoneNumberInvalid": {
+    "description": "Register phone number Error"
+  },
+  "selectPhotoLabel": "Restaurant Photo",
+  "@selectPhotoLabel": {
+    "description": "Restaurant Photo"
+  },
+  "formSubmit": "Submit",
+  "@formSubmit": {
+    "description": "Submit form"
+  },
+  "signOutConfirmation": "Are you sure tou want to Sign out?",
+  "@signOutConfirmation": {
+    "description": "Signing out"
+  },
+
+  "loginVerificationError": "There is no User with this Phone Number",
+  "@loginVerificationError": {
+    "description": "new user"
+  },
+  "loginVerificationError1": "Phone Number is incorrect",
+  "@loginVerificationError1": {
+    "description": "phone number error"
+  },
+  "loginVerificationSuccess": "Login Success",
+  "@loginVerificationSuccess": {
+    "description": "Success"
+  },
+
+  "formUserName": "Enter UserName",
+  "@formUserName": {
+    "description": " UserName"
+  },
+  "formRestaurantName": "Enter Restaurant Name",
+  "@formRestaurantName": {
+    "description": "Restaurant Name"
+  },
+  "formRestaurantNameError": "Please Enter Restaurant Name",
+  "@formRestaurantNameError": {
+    "description": "Restaurant Name"
+  },
+  "formRestaurantAddressError": "Please Enter Restaurant Address",
+  "@formRestaurantAddressError": {
+    "description": "Restaurant Address"
+  },
+  "formRestaurantUserNameError": "Please Enter UserName",
+  "@formRestaurantUserNameError": {
+    "description": "Restaurant UserName"
+  },
+  "selectCity": "Please Select your city",
+  "@selectCity": {
+    "description": "Restaurant city"
+  },
+  "selectCityError": "You forgot to select your city",
+  "@selectCityError": {
+    "description": "Restaurant city error"
+  },
+  "addRestaurantSuccess": "Restaurant Added on Success",
+  "@addRestaurantSuccess": {
+    "description": "Restaurant city Success"
+  },
+  "addRestaurantError": "Something went Wrong",
+  "@addRestaurantError": {
+    "description": "Restaurant addition error"
+  },
+
+
+
+  "orderEstimationKeyWithArgs": "ORDER (EST.){value}",
+  "@orderEstimationKeyWithArgs": {
+    "description": "Order (Estimated)",
+    "placeholders": {
+      "value" : {
+        "type": "String"
+      }
+    }
+  },
+
+
+"viewOrderEstKeyWithArgs": "VIEW ORDER (EST.) {value}",
+  "@viewOrderEstKeyWithArgs": {
+    "description": "View Order (Estimated)",
+    "placeholders" : {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+
+
+
+
+"supplierChatDescription": "Welcome to your new chat with {supplier_name}",
+  "@supplierChatDescription": {
+    "description": "Supplier chat welcome",
+    "placeholders": {
+      "supplier_name": {
+        "type": "String"
+      }
+    }
+  },
+  "minimumOrderValueKeyWithArgs": "Minimum Order Value {value}",
+  "@minimumOrderValueKeyWithArgs": {
+    "description": "Minimum Order Value",
+    "placeholders": {
+      "value" : {
+        "type": "String"
+      }
+    }
+  },
+  "supplierChatName": "Message {supplier_name}",
+  "@supplierChatName": {
+    "description": "Supplier chat name",
+    "placeholders": {
+      "supplier_name": {
+        "type": "String"
+      }
+    }
+  },
+  "supplierProductsKey": "SUPPLIER PRODUCTS {product_index}",
+  "@supplierProductsKey": {
+    "description": "Supplier Products",
+    "placeholders": {
+      "product_index": {
+        "type": "String"
+      }
+    }
+  },
+  "immensePrideKey": "At {supplier_name} take immense pride being your premier destination for the freshest and most exquisite seafood straight from the sea.",
+  "@immensePrideKey": {
+    "description": "Immense Pride at Supplier",
+    "placeholders": {
+      "supplier_name": {
+        "type": "String"
+      }
+    }
+  },
+  "existingCustomerIndicateKey": "Please indicate below whether or not you are an existing customer of {supplier_name}",
+  "@existingCustomerIndicateKey": {
+    "description": "Existing Customer Indication",
+    "placeholders": {
+      "supplier_name": {
+        "type": "String"
+      }
+    }
+  }
+}

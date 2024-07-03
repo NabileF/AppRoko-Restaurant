@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:roko_app1/app_colors/app_colors.dart';
 import 'package:roko_app1/models/supplier_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SupplierProfileScreen extends StatelessWidget {
   final SupplierModel? supplier;
@@ -10,11 +11,12 @@ class SupplierProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
+    AppLocalizations appLocalizations = AppLocalizations.of(context)!;
 
     // List of Delivery Days !! I didn't want to Hard code it
     List<String> list = [
       // Add actual localized delivery day strings here
-      "Mon", "Tue", "Wen", "Thu", "Fri"
+      appLocalizations.moKey,appLocalizations.tueKey,appLocalizations.wedKey,appLocalizations.thurKey,appLocalizations.friKey
     ];
 
     if (supplier == null) {
@@ -78,7 +80,7 @@ class SupplierProfileScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
-                "Description...",
+                appLocalizations.immensePrideKey(supplier!.representativeName!),
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
                 style: textTheme.headlineSmall!.copyWith(fontSize: 18.0),
@@ -90,10 +92,9 @@ class SupplierProfileScreen extends StatelessWidget {
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: "View More",
-                      style: textTheme.labelLarge!.copyWith(
-                        color: Colors.blue,
-                      ),
+                        text: appLocalizations.showMoreKey,style: textTheme.labelLarge!.copyWith(
+                        color: Colors.blue
+                    )
                     ),
                   ],
                 ),
@@ -103,7 +104,7 @@ class SupplierProfileScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
-                "About",
+                appLocalizations.aboutKey,
                 style: textTheme.labelLarge!.copyWith(fontSize: 20.0),
               ),
             ),
@@ -135,7 +136,7 @@ class SupplierProfileScreen extends StatelessWidget {
                           color: AppColors.blue,
                         ),
                         title: Text(
-                          "Delivery Days",
+                          appLocalizations.deliveryDaysKey,
                           style: textTheme.labelLarge,
                         ),
                         subtitle: Row(
@@ -155,7 +156,7 @@ class SupplierProfileScreen extends StatelessWidget {
                           color: AppColors.blue,
                         ),
                         title: Text(
-                          "Cutting Time",
+                          appLocalizations.cutOffTimesKey,
                           style: textTheme.labelLarge!.copyWith(),
                         ),
                         subtitle: const Text("4:00pm"),
@@ -167,7 +168,7 @@ class SupplierProfileScreen extends StatelessWidget {
                           color: AppColors.blue,
                         ),
                         title: Text(
-                          "Minimum Order Value",
+                          appLocalizations.minimumOrderValueKey,
                           style: textTheme.labelLarge,
                         ),
                         subtitle: const Text("120"),
@@ -179,7 +180,7 @@ class SupplierProfileScreen extends StatelessWidget {
                           color: AppColors.blue,
                         ),
                         title: Text(
-                          "Shipping Cost",
+                          appLocalizations.deliveryFeeKey,
                           style: textTheme.labelLarge,
                         ),
                         subtitle: const Text("10"),
@@ -209,8 +210,8 @@ class SupplierProfileScreen extends StatelessWidget {
                           height: MediaQuery.of(context).size.height * 0.3,
                           child: Column(
                             children: [
-                              const Text(
-                                "Only accept existing customers",
+                              Text(
+                                appLocalizations.onlyExistingCustomersKey,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: AppColors.darkDeepBlue,
@@ -219,8 +220,8 @@ class SupplierProfileScreen extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(height: 5.0),
-                              const Text(
-                                "Please indicte below that you are an existing customer of We Fruits",
+                              Text(
+                                appLocalizations.existingCustomerIndicateKey(supplier!.representativeName!),
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Colors.black54,
@@ -237,8 +238,8 @@ class SupplierProfileScreen extends StatelessWidget {
                                       backgroundColor: AppColors.lightBlue,
                                     foregroundColor: Colors.white
                                   ),
-                                  child: const Text(
-                                    "I am an existing customer",
+                                  child: Text(
+                                    appLocalizations.existingCustomerKey
                                   ),
                                 ),
                               ),
@@ -255,8 +256,8 @@ class SupplierProfileScreen extends StatelessWidget {
                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
                                   ),
                                   onPressed: () {},
-                                  child: const Text(
-                                    "I am not an existing customer",
+                                  child: Text(
+                                    appLocalizations.notExistingCustomerKey,
                                     style: TextStyle(fontWeight: FontWeight.w700),
                                   ),
                                 ),
@@ -269,7 +270,7 @@ class SupplierProfileScreen extends StatelessWidget {
                   );
                 },
                 child: Text(
-                  "ADD SUPPLIER",
+                  appLocalizations.addSupplierKey,
                   style: textTheme.labelLarge!.copyWith(
                     color: Colors.white,
                   ),
