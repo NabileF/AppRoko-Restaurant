@@ -6,7 +6,7 @@ import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import 'package:pinput/pinput.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:roko_app1/bloc/auth_bloc/signin_bloc/signin_bloc.dart';
-import 'package:roko_app1/screens/home_page.dart';
+import 'package:roko_app1/screens/restaurant/restaurant_profile.dart';
 import 'package:roko_app1/shared_widgets/components/useable_functions.dart';
 
 class VerificationCodeScreen extends StatefulWidget {
@@ -43,7 +43,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
                       child: Text('Ok'),
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => HomePage(),
+                          builder: (context) => RestaurantProfile(),
                         ));
                       },
                     )

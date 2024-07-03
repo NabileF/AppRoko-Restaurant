@@ -18,7 +18,7 @@ class AuthMethods {
     await _auth.verifyPhoneNumber(
       phoneNumber: phoneNumber,
       timeout: const Duration(seconds: 120),
-      // This handler will only be called on Android devices which support automatic SMS code resolution. 
+      // This handler will only be called on Android devices which support automatic SMS code resolution.
       verificationCompleted: (PhoneAuthCredential credential) async {
         try {
           await _auth.signInWithCredential(credential);
@@ -44,13 +44,14 @@ class AuthMethods {
         completer.completeError('Timeout');
       },
     );
-    return completer.future; 
+    return completer.future;
   }
+
   // This function verifies the SMS code sent to the user to sign them in afterwards.
   verifyOTP(String verificationId, String smsCode) async {
     final Completer<Map<String, String>> completer = Completer();
     try {
-       // Create a PhoneAuthCredential with the SMS code
+      // Create a PhoneAuthCredential with the SMS code
       PhoneAuthCredential credential = PhoneAuthProvider.credential(
         verificationId: verificationId,
         smsCode: smsCode,
@@ -64,6 +65,7 @@ class AuthMethods {
     }
     return completer.future;
   }
+
   // this function stores the restaurant info in the Firestore database
   addRestaurantInfo(
       {required String restaurantName,
@@ -92,6 +94,7 @@ class AuthMethods {
       print(e.toString());
     }
   }
+
   // This function checks if the user's phone number exists in the database
   checkIfPhoneNumberExists(String phoneNumber) async {
     final querySnapshot = await restaurants

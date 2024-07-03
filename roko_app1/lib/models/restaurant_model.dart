@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:roko_app1/models/contact_info.dart';
-import 'package:roko_app1/models/subscription_model.dart';
 
 class RestaurantModel {
   String restaurantId;
@@ -16,7 +16,7 @@ class RestaurantModel {
     required this.restaurantName,
     required this.contactInfo,
     required this.busnissHours,
-   // required this.subscription,
+    // required this.subscription,
   });
 
   Map<String, dynamic> toJson() => {
@@ -25,18 +25,19 @@ class RestaurantModel {
         'restaurantName': restaurantName,
         'contactInfo': contactInfo.toJson(),
         'busnissHours': busnissHours,
-      //  'subscription': subscription.toJson(),
+        //  'subscription': subscription.toJson(),
       };
 
-  factory RestaurantModel.fromMap(Map<String, dynamic> map) {
+  factory RestaurantModel.fromSnap(DocumentSnapshot snap) {
+    var snapshot = snap.data() as Map<String, dynamic>;
     return RestaurantModel(
-      restaurantId: map['restaurantId'] as String,
-      ownerName: map['ownerName'] as String,
-      restaurantName: map['restaurantName'] as String,
-      busnissHours: map['busnissHours'] as String,
+      restaurantId: snapshot['restaurantId'] as String,
+      ownerName: snapshot['ownerName'] as String,
+      restaurantName: snapshot['restaurantName'] as String,
+      busnissHours: snapshot['busnissHours'] as String,
       /*subscription: SubscriptionModel.fromMap(
           map['subscription'] as Map<String, dynamic>),*/
-      contactInfo: ContactInfo.fromMap(map['contactInfo']),
+      contactInfo: ContactInfo.fromMap(snapshot['contactInfo']),
     );
   }
 }
