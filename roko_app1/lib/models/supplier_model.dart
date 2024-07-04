@@ -45,7 +45,7 @@ class SupplierModel {
       'supplierId': supplierId,
       'supplierName': supplierName,
       'representativeName': representativeName,
-      'contactInfo': contactInfo.toMap(),
+      'contactInfo': contactInfo.toJson(),
       'profilePicture': profilePicture,
       'unexpectedDeliveryDay': dateFormat.format(unexpectedDeliveryDay),
       // Format date

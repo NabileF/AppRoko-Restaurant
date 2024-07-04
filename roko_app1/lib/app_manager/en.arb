@@ -636,6 +636,22 @@
   "@formRestaurantNameError": {
     "description": "Restaurant Name"
   },
+  "formRestaurantEmail": "Enter Restaurant E-mail",
+  "@formRestaurantEmail": {
+    "description": "Restaurant E-mail"
+  },
+  "formRestaurantEmailError": "Please Enter Restaurant E-mail",
+  "@formRestaurantEmailError": {
+    "description": "Restaurant E-mail"
+  },
+  "formOwnerName": "Enter OwnerName",
+  "@formOwnerName": {
+    "description": "OwnerName"
+  },
+  "formOwnerNameError": "Please Enter OwnerName",
+  "@formOwnerNameError": {
+    "description": "OwnerName"
+  },
   "formRestaurantAddressError": "Please Enter Restaurant Address",
   "@formRestaurantAddressError": {
     "description": "Restaurant Address"

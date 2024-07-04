@@ -1,1 +1,23 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"rokoapp-8222e","appId":"1:811481775179:android:5a0bc5f3213a218e29a1ce","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"rokoapp-8222e","configurations":{"android":"1:811481775179:android:5a0bc5f3213a218e29a1ce","ios":"1:811481775179:ios:014c10a1ccf47eed29a1ce","web":"1:811481775179:web:22436527ead64b4529a1ce"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "rokoapp-8222e",
+          "appId": "1:811481775179:android:5a0bc5f3213a218e29a1ce",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "rokoapp-8222e",
+          "configurations": {
+            "android": "1:811481775179:android:5a0bc5f3213a218e29a1ce",
+            "ios": "1:811481775179:ios:014c10a1ccf47eed29a1ce",
+            "web": "1:811481775179:web:22436527ead64b4529a1ce"
+          }
+        }
+      }
+    }
+  }
+}

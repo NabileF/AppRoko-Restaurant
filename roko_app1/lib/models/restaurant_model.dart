@@ -9,26 +9,24 @@ class RestaurantModel {
   String restaurantName;
   ContactInfo contactInfo;
   String busnissHours;
-  SubscriptionModel subscription;
+  //SubscriptionModel subscription;
   RestaurantModel({
     required this.restaurantId,
     required this.ownerName,
     required this.restaurantName,
     required this.contactInfo,
     required this.busnissHours,
-    required this.subscription,
+   // required this.subscription,
   });
 
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'restaurantId': restaurantId,
-      'ownerName': ownerName,
-      'restaurantName': restaurantName,
-      'contactInfo': contactInfo.toMap(),
-      'busnissHours': busnissHours,
-      'subscription': subscription.toMap(),
-    };
-  }
+  Map<String, dynamic> toJson() => {
+        'restaurantId': restaurantId,
+        'ownerName': ownerName,
+        'restaurantName': restaurantName,
+        'contactInfo': contactInfo.toJson(),
+        'busnissHours': busnissHours,
+      //  'subscription': subscription.toJson(),
+      };
 
   factory RestaurantModel.fromMap(Map<String, dynamic> map) {
     return RestaurantModel(
@@ -36,8 +34,9 @@ class RestaurantModel {
       ownerName: map['ownerName'] as String,
       restaurantName: map['restaurantName'] as String,
       busnissHours: map['busnissHours'] as String,
-      subscription: SubscriptionModel.fromMap(
-          map['subscription'] as Map<String, dynamic>), contactInfo: ContactInfo.fromMap(map['contactInfo']),
+      /*subscription: SubscriptionModel.fromMap(
+          map['subscription'] as Map<String, dynamic>),*/
+      contactInfo: ContactInfo.fromMap(map['contactInfo']),
     );
   }
 }

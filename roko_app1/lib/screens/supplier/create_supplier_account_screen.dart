@@ -61,7 +61,7 @@ class _CreateSupplierAccountScreenState extends State<CreateSupplierAccountScree
         supplierName: _supplierNameController.text,
         representativeName: _representativeNameController.text,
         contactInfo: ContactInfo(
-          phoneNumber: int.tryParse(_phoneNumberController.text),
+          phoneNumber: _phoneNumberController.text,
           email: _emailController.text,
           address: _addressController.text,
         ),
