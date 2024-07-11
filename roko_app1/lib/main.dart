@@ -31,48 +31,48 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      supportedLocales: L10n.all,
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate
-      ],
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFFFAF9F6),
-        appBarTheme: const AppBarTheme(
-          systemOverlayStyle:
-              SystemUiOverlayStyle(statusBarIconBrightness: Brightness.dark),
-          color: const Color(0xFFFAF9F6),
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ButtonStyle(
-                maximumSize: WidgetStateProperty.all<Size>(
-                  const Size.fromWidth(double.infinity),
-                ),
-                iconColor: WidgetStateProperty.all<Color>(
-                  Colors.white,
-                ),
-                backgroundColor:
-                    WidgetStateProperty.all<Color>(AppColors.lightBlue),
-                foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
-                padding: WidgetStateProperty.all<EdgeInsets>(
-                    const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 10.0)),
-                shape: WidgetStateProperty.all<OutlinedBorder>(
-                    const RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.all(Radius.circular(10.0)))))),
-      ),
-      home: MultiBlocProvider(
-        providers: [
-          BlocProvider<SigninBloc>(create: (context) => SigninBloc()),
-          BlocProvider<SignupBloc>(create: (context) => SignupBloc())
+        supportedLocales: L10n.all,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate
         ],
-        child: const IntroScreen(),
-      ),
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          scaffoldBackgroundColor: const Color(0xFFFAF9F6),
+          appBarTheme: const AppBarTheme(
+            systemOverlayStyle:
+                SystemUiOverlayStyle(statusBarIconBrightness: Brightness.dark),
+            color: const Color(0xFFFAF9F6),
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ButtonStyle(
+                  maximumSize: WidgetStateProperty.all<Size>(
+                    const Size.fromWidth(double.infinity),
+                  ),
+                  iconColor: WidgetStateProperty.all<Color>(
+                    Colors.white,
+                  ),
+                  backgroundColor:
+                      WidgetStateProperty.all<Color>(AppColors.lightBlue),
+                  foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+                  padding: WidgetStateProperty.all<EdgeInsets>(
+                      const EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 10.0)),
+                  shape: WidgetStateProperty.all<OutlinedBorder>(
+                      const RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(10.0)))))),
+        ),
+        home: MultiBlocProvider(
+          providers: [
+            BlocProvider<SigninBloc>(create: (context) => SigninBloc()),
+            BlocProvider<SignupBloc>(create: (context) => SignupBloc())
+          ],
+          child: const IntroScreen(),
+        ),
     );
   }
 }

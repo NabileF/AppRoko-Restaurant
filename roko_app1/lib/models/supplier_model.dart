@@ -1,5 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, constant_identifier_names
-
 import 'package:roko_app1/models/contact_info.dart';
 import 'package:roko_app1/models/rating_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -48,14 +46,11 @@ class SupplierModel {
       'contactInfo': contactInfo.toJson(),
       'profilePicture': profilePicture,
       'unexpectedDeliveryDay': dateFormat.format(unexpectedDeliveryDay),
-      // Format date
       'isExisting': isExisting,
       'communicationPreference': communicationPreference.name,
       'rating': rating.map((r) => r.toMap()).toList(),
       'createdAt': dateFormat.format(createdAt),
-      // Format date
       'updatedAt': dateFormat.format(updatedAt),
-      // Format date
     };
   }
 
@@ -64,13 +59,15 @@ class SupplierModel {
       supplierId: map['supplierId'] as String,
       supplierName: map['supplierName'] as String,
       representativeName: map['representativeName'] as String,
-      contactInfo:
-          ContactInfo.fromMap(map['contactInfo'] as Map<String, dynamic>),
+      contactInfo: ContactInfo.fromMap(map['contactInfo'] as Map<String, dynamic>),
       profilePicture: map['profilePicture'] as String,
       unexpectedDeliveryDay: DateTime.parse(map['unexpectedDeliveryDay']),
       isExisting: map['isExisting'] as bool,
       communicationPreference: CommunicationPreference.values
-          .firstWhere((e) => e.toString() == map['communicationPreference']),
+          .firstWhere(
+            (e) => e.toString().split('.').last == map['communicationPreference'],
+        orElse: () => CommunicationPreference.Email, // Default value
+      ),
       rating: (map['rating'] as List<dynamic>)
           .map((r) => RatingModel.fromMap(r as Map<String, dynamic>))
           .toList(),
