@@ -11,6 +11,7 @@ import 'package:roko_app1/bloc/auth_bloc/signin_bloc/signin_bloc.dart';
 import 'package:roko_app1/bloc/auth_bloc/signup_bloc/signup_bloc.dart';
 import 'package:roko_app1/firebase_options.dart';
 import 'package:roko_app1/screens/Auth/intro_screen.dart';
+import 'package:roko_app1/screens/supplier/create_supplier_account_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -66,13 +67,14 @@ class MyApp extends StatelessWidget {
                           borderRadius:
                               BorderRadius.all(Radius.circular(10.0)))))),
         ),
-        home: MultiBlocProvider(
-          providers: [
-            BlocProvider<SigninBloc>(create: (context) => SigninBloc()),
-            BlocProvider<SignupBloc>(create: (context) => SignupBloc())
-          ],
-          child: const IntroScreen(),
-        ),
+        // home: MultiBlocProvider(
+        //   providers: [
+        //     BlocProvider<SigninBloc>(create: (context) => SigninBloc()),
+        //     BlocProvider<SignupBloc>(create: (context) => SignupBloc())
+        //   ],
+        //   child: const IntroScreen(),
+        // ),
+      home: CreateSupplierAccountScreen(),
     );
   }
 }

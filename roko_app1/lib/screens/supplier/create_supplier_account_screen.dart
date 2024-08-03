@@ -1,42 +1,51 @@
-import 'dart:async'; // For asynchronous programming
-import 'dart:io'; // For handling file input/output
+import 'dart:async';
+import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:roko_app1/app_colors/app_colors.dart';
+import '../../bloc/supplier_acc_bloc/create_acc_bloc.dart';
+import '../../bloc/supplier_acc_bloc/create_acc_state.dart';
+import '../../models/contact_info.dart';
+import '../../models/supplier_model.dart';
 
-import 'package:cloud_firestore/cloud_firestore.dart'; // For Firestore database
-import 'package:firebase_storage/firebase_storage.dart'; // For Firebase storage
-import 'package:flutter/cupertino.dart'; // For Cupertino widgets
-import 'package:flutter/material.dart'; // For Material Design widgets
-import 'package:flutter/services.dart'; // For handling text input and other services
-import 'package:flutter_spinkit/flutter_spinkit.dart'; // For loading spinners
-import 'package:image_picker/image_picker.dart'; // For picking images from gallery/camera
-import 'package:roko_app1/app_colors/app_colors.dart'; // Custom app colors
-
-import '../../models/contact_info.dart'; // Custom model for contact information
-import '../../models/supplier_model.dart'; // Custom model for supplier information
-
-// StatefulWidget for creating supplier account
 class CreateSupplierAccountScreen extends StatefulWidget {
   const CreateSupplierAccountScreen({super.key});
 
   @override
-  State<CreateSupplierAccountScreen> createState() =>
-      _CreateSupplierAccountScreenState();
+  State<CreateSupplierAccountScreen> createState() => _CreateSupplierAccountScreenState();
 }
 
-// State class for CreateSupplierAccountScreen
 class _CreateSupplierAccountScreenState extends State<CreateSupplierAccountScreen> {
-  final _formKey = GlobalKey<FormState>(); // Key for form validation
-  final _supplierNameController = TextEditingController(); // Controller for supplier name input
-  final _representativeNameController = TextEditingController(); // Controller for representative name input
-  final _phoneNumberController = TextEditingController(); // Controller for phone number input
-  final _emailController = TextEditingController(); // Controller for email input
-  final _addressController = TextEditingController(); // Controller for address input
+  // Form key to manage the state of the form
+  final _formKey = GlobalKey<FormState>();
 
-  Uint8List? _image; // For storing selected image
-  File? selectedImage; // For storing selected image file
+  // TextEditingControllers for managing the text fields
+  final _supplierNameController = TextEditingController();
+  final _representativeNameController = TextEditingController();
+  final _phoneNumberController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _addressController = TextEditingController();
+
+  Uint8List? _image; // Stores the image data
+  File? selectedImage; // Stores the selected image file
+
+  late SupplierBloc _supplierBloc; // BLoC for managing supplier-related state
+
+  @override
+  void initState() {
+    super.initState();
+    _supplierBloc = SupplierBloc(); // Initialize the SupplierBloc
+  }
 
   @override
   void dispose() {
-    // Dispose controllers to free up resources
+    _supplierBloc.close(); // Close the BLoC when the widget is disposed
     _supplierNameController.dispose();
     _representativeNameController.dispose();
     _phoneNumberController.dispose();
@@ -45,19 +54,28 @@ class _CreateSupplierAccountScreenState extends State<CreateSupplierAccountScree
     super.dispose();
   }
 
-  // Function to add supplier to Firestore
+  // Method to upload image to Firebase Storage
+  Future<String> _uploadImageToStorage() async {
+    final storageRef = FirebaseStorage.instance.ref().child('profile_pictures').child('${DateTime.now().millisecondsSinceEpoch}.jpg');
+    final uploadTask = storageRef.putFile(selectedImage!); // Upload the image file
+    final snapshot = await uploadTask;
+    final downloadUrl = await snapshot.ref.getDownloadURL(); // Get the download URL of the uploaded image
+    return downloadUrl;
+  }
+
+  // Method to add a new supplier
   Future<void> _addSupplier() async {
     if (_formKey.currentState?.validate() ?? false) {
-      _showLoadingDialog();
+      _showLoadingDialog(); // Show loading dialog
 
       String? imageUrl;
       if (selectedImage != null) {
-        imageUrl = await _uploadImageToStorage();
+        imageUrl = await _uploadImageToStorage(); // Upload image if selected
       }
 
       // Creating a new supplier model
       final supplier = SupplierModel(
-        supplierId: FirebaseFirestore.instance.collection('suppliers').doc().id,
+        supplierId: FirebaseFirestore.instance.collection('suppliers').doc().id, // Generate a new document ID
         supplierName: _supplierNameController.text,
         representativeName: _representativeNameController.text,
         contactInfo: ContactInfo(
@@ -76,150 +94,105 @@ class _CreateSupplierAccountScreenState extends State<CreateSupplierAccountScree
 
       // Saving the supplier to Firestore
       await supplier.createAccount();
-      Navigator.of(context).pop();
+      Navigator.of(context).pop(); // Close the loading dialog
       ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Your account has been created!')));
+          const SnackBar(content: Text('Your account has been created!'))); // Show success message
     }
   }
 
-  // Function to upload image to Firebase storage
-  Future<String> _uploadImageToStorage() async {
-    final storageRef = FirebaseStorage.instance.ref().child('profile_pictures').child('${DateTime.now().millisecondsSinceEpoch}.jpg');
-    final uploadTask = storageRef.putFile(selectedImage!);
-    final snapshot = await uploadTask;
-    final downloadUrl = await snapshot.ref.getDownloadURL();
-    return downloadUrl;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Create Account"),
-        centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: AppColors.lightBlue),
-          onPressed: () {
-            // Navigate back
-          },
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Form(
-          key: _formKey,
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-              child: Column(
+  // Method to show loading dialog
+  void _showLoadingDialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return const AlertDialog(
+          backgroundColor: Colors.transparent,
+          content: SizedBox(
+            height: 70,
+            width: 70,
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Stack(children: [
-                    _image != null
-                        ? CircleAvatar(
-                      radius: 64,
-                      backgroundImage: MemoryImage(_image!),
-                    )
-                        : const CircleAvatar(
-                      radius: 64,
-                      backgroundImage: NetworkImage(
-                          "https://t4.ftcdn.net/jpg/03/31/69/91/360_F_331699188_lRpvqxO5QRtwOM05gR50ImaaJgBx68vi.jpg"),
-                    ),
-                    Positioned(
-                      bottom: -10,
-                      left: 80,
-                      child: IconButton(
-                        onPressed: () {
-                          showImagePickerOption(context);
-                        },
-                        icon: const Icon(Icons.add_a_photo),
-                        iconSize: 30,
-                      ),
-                    )
-                  ]),
-                  const Divider(
-                    color: AppColors.lightBlue,
-                    height: 40,
-                    thickness: 0.2,
-                  ),
-                  _buildTextFormField(
-                      _supplierNameController, 'Full Name', TextInputType.text,
-                          (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your full name';
-                        }
-                        return null;
-                      }),
-                  const SizedBox(height: 20),
-                  _buildTextFormField(_representativeNameController,
-                      'Representative Name', TextInputType.text, (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your representative name';
-                        }
-                        return null;
-                      }),
-                  const SizedBox(height: 20),
-                  _buildTextFormField(_phoneNumberController, 'Phone Number',
-                      TextInputType.phone, (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your phone number';
-                        }
-                        return null;
-                      }),
-                  const SizedBox(height: 20),
-                  _buildTextFormField(
-                      _emailController, 'Email', TextInputType.emailAddress,
-                          (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your email';
-                        }
-                        return null;
-                      }),
-                  const SizedBox(height: 20),
-                  _buildTextFormField(
-                      _addressController, 'Address', TextInputType.text,
-                          (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your address';
-                        }
-                        return null;
-                      }),
-                  const Divider(
-                    color: AppColors.lightBlue,
-                    height: 40,
-                    thickness: 0.2,
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 50,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.lightBlue,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      onPressed: _addSupplier,
-                      child: const Text(
-                        "Complete Account Setup",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
+                  SpinKitCircle(
+                    color: Colors.white,
                   )
                 ],
               ),
             ),
           ),
+        );
+      },
+    );
+  }
+
+  // Method to pick image from gallery
+  Future<void> _pickImageFromGallery() async {
+    final returnImage = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (returnImage == null) return;
+    setState(() {
+      selectedImage = File(returnImage.path);
+      _image = File(returnImage.path).readAsBytesSync(); // Read image as bytes
+    });
+  }
+
+  // Method to pick image from camera
+  Future<void> _pickImageFromCamera() async {
+    final returnImage = await ImagePicker().pickImage(source: ImageSource.camera);
+    if (returnImage == null) return;
+    setState(() {
+      selectedImage = File(returnImage.path);
+      _image = File(returnImage.path).readAsBytesSync(); // Read image as bytes
+    });
+  }
+
+  // Method to show image picker options (camera or gallery)
+  void showImagePickerOption(BuildContext context) {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (context) => CupertinoActionSheet(
+        title: const Text(
+          'Select From',
+          style: TextStyle(color: Colors.grey, fontSize: 13),
+        ),
+        actions: [
+          CupertinoActionSheetAction(
+            child: const Text(
+              'Camera',
+              style: TextStyle(color: Colors.blue),
+            ),
+            onPressed: () async {
+              Navigator.of(context).pop();
+              await _pickImageFromCamera(); // Pick image from camera
+            },
+          ),
+          CupertinoActionSheetAction(
+            child: const Text(
+              'Gallery',
+              style: TextStyle(color: Colors.blue),
+            ),
+            onPressed: () async {
+              Navigator.of(context).pop();
+              await _pickImageFromGallery(); // Pick image from gallery
+            },
+          ),
+        ],
+        cancelButton: CupertinoActionSheetAction(
+          child: const Text(
+            'Cancel',
+            style: TextStyle(color: Colors.red),
+          ),
+          onPressed: () {
+            Navigator.of(context).pop(); // Close the action sheet
+          },
         ),
       ),
     );
   }
 
-  // Helper method to build text form fields
-  Widget _buildTextFormField(TextEditingController controller, String labelText,
-      TextInputType keyboardType, String? Function(String?) validator) {
+  // Helper method to build a text form field
+  Widget _buildTextFormField(TextEditingController controller, String labelText, TextInputType keyboardType, String? Function(String?) validator) {
     return TextFormField(
       controller: controller,
       decoration: InputDecoration(
@@ -247,96 +220,123 @@ class _CreateSupplierAccountScreenState extends State<CreateSupplierAccountScree
     );
   }
 
-  // Method to show image picker options (camera/gallery)
-  void showImagePickerOption(BuildContext context) {
-    showCupertinoModalPopup(
-      context: context,
-      builder: (context) => CupertinoActionSheet(
-        title: const Text(
-          'Select From',
-          style: TextStyle(color: Colors.grey, fontSize: 13),
-        ),
-        actions: [
-          CupertinoActionSheetAction(
-            child: const Text(
-              'Camera',
-              style: TextStyle(color: Colors.blue),
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => _supplierBloc,
+      child: BlocListener<SupplierBloc, SupplierState>(
+        listener: (context, state) {
+          if (state is SupplierLoading) {
+            _showLoadingDialog(); // Show loading dialog when loading state
+          } else if (state is SupplierLoaded) {
+            Navigator.of(context).pop(); // Close the loading dialog
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.message))); // Show success message
+          } else if (state is SupplierError) {
+            Navigator.of(context).pop(); // Close the loading dialog
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.error))); // Show error message
+          }
+        },
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text("Create Account"),
+            centerTitle: true,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: AppColors.lightBlue),
+              onPressed: () {
+                Navigator.of(context).pop(); // Navigate back
+              },
             ),
-            onPressed: () async {
-              Navigator.of(context).pop();
-              await _pickImageFromCamera();
-            },
           ),
-          CupertinoActionSheetAction(
-            child: const Text(
-              'Gallery',
-              style: TextStyle(color: Colors.blue),
-            ),
-            onPressed: () async {
-              Navigator.of(context).pop();
-              await _pickImageFromGallery();
-            },
-          ),
-        ],
-        cancelButton: CupertinoActionSheetAction(
-          child: const Text(
-            'Cancel',
-            style: TextStyle(color: Colors.red),
-          ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-      ),
-    );
-  }
-
-  // Method to pick image from gallery
-  Future<void> _pickImageFromGallery() async {
-    final returnImage =
-    await ImagePicker().pickImage(source: ImageSource.gallery);
-    if (returnImage == null) return;
-    setState(() {
-      selectedImage = File(returnImage.path);
-      _image = File(returnImage.path).readAsBytesSync();
-    });
-  }
-
-  // Method to pick image from camera
-  Future<void> _pickImageFromCamera() async {
-    final returnImage =
-    await ImagePicker().pickImage(source: ImageSource.camera);
-    if (returnImage == null) return;
-    setState(() {
-      selectedImage = File(returnImage.path);
-      _image = File(returnImage.path).readAsBytesSync();
-    });
-  }
-
-  // Method to show loading dialog
-  void _showLoadingDialog() {
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return const AlertDialog(
-          backgroundColor: Colors.transparent,
-          content: SizedBox(
-            height: 70,
-            width: 70,
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SpinKitCircle(
-                    color: Colors.white,
-                  )
-                ],
+          body: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          showImagePickerOption(context); // Show image picker options
+                        },
+                        child: CircleAvatar(
+                          radius: 60,
+                          backgroundColor: AppColors.lightBlue,
+                          backgroundImage: _image != null ? MemoryImage(_image!) : null,
+                          child: _image == null
+                              ? const Icon(
+                            Icons.add_a_photo,
+                            size: 50,
+                            color: Colors.white,
+                          )
+                              : null,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      _buildTextFormField(_supplierNameController, "Supplier Name", TextInputType.text, (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please enter the supplier name";
+                        }
+                        return null;
+                      }),
+                      const SizedBox(height: 20),
+                      _buildTextFormField(_representativeNameController, "Representative Name", TextInputType.text, (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please enter the representative name";
+                        }
+                        return null;
+                      }),
+                      const SizedBox(height: 20),
+                      _buildTextFormField(_phoneNumberController, "Phone Number", TextInputType.phone, (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please enter the phone number";
+                        }
+                        return null;
+                      }),
+                      const SizedBox(height: 20),
+                      _buildTextFormField(_emailController, "Email", TextInputType.emailAddress, (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please enter the email address";
+                        }
+                        if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                          return "Please enter a valid email address";
+                        }
+                        return null;
+                      }),
+                      const SizedBox(height: 20),
+                      _buildTextFormField(_addressController, "Address", TextInputType.text, (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please enter the address";
+                        }
+                        return null;
+                      }),
+                      const Divider(color: AppColors.lightBlue, height: 40, thickness: 0.2),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 50,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.lightBlue,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          onPressed: _addSupplier, // Trigger supplier addition
+                          child: const Text(
+                            "Complete Account Setup",
+                            style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }
